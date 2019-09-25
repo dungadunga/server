@@ -6,6 +6,7 @@ import * as express from 'express';
 import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 
+import apiController from '@Controller/apiController';
 import ErrorMiddleware from '@Middleware/error/errorMiddleware';
 import CustomError from '@Middleware/error/customError';
 import { connect } from 'database';
@@ -25,10 +26,10 @@ app.use(
   })
 );
 
+app.use('/api', apiController);
 app.use((req, res, next) => {
   next(new CustomError({ name: 'Not_Found' }));
 });
-
 app.use(ErrorMiddleware);
 
 connect({ force: false })
