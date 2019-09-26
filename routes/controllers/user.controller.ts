@@ -14,6 +14,7 @@ import getUserValidation from "@Middleware/user/get/_validation";
 
 // Post
 import postUser from "@Middleware/user/post/postUser";
+import checkOauth from "@Middleware/user/post/checkOauth";
 
 // Check
 import userCheckValidation from "@Middleware/user/check/_validation";
@@ -27,7 +28,7 @@ userController.get('/check/email', userCheckValidation);
 userController.use('/', checkValidation);
 
 userController.get('/', getUser, issueToken);
-userController.post('/', checkDuplicateUser('register'), postUser);
+userController.post('/', checkOauth, checkDuplicateUser('register'), postUser);
 userController.get('/check/email', checkDuplicateUser('check'));
 
 export default userController;

@@ -21,6 +21,7 @@
   "homepage": "https://github.com/dungadunga/server#readme",
   "dependencies": {
     "aws-sdk": "^2.535.0",
+    "axios": "^0.19.0",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "dotenv": "^8.1.0",

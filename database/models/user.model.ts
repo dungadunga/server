@@ -15,15 +15,21 @@ export default class User extends Model<User> {
 
     @AllowNull(false)
     @Column(DataType.STRING)
-    public name: string;
-
-    @AllowNull(false)
-    @Column(DataType.STRING)
     public email: string;
 
     @AllowNull(false)
     @Column(DataType.STRING)
     public password: string;
+
+    @AllowNull(false)
+    @Column(DataType.STRING)
+    public phone: string;
+
+    @Column(DataType.STRING)
+    public platform: 'google' | 'facebook';
+
+    @Column(DataType.INTEGER)
+    public platform_pk: number;
     
     @Column(DataType.DATE)
     public createdAt: Date;

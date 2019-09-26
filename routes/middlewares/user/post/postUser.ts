@@ -6,14 +6,14 @@ import CustomError from "@Middleware/error/customError";
 interface Body {
   email: string;
   password: string;
-  name: string;
+  phone: string;
 }
 
 const postUser = async (req: Request, res: Response, next: NextFunction) => {
-  const { email, password, name }: Body  = req.body;
+  const { email, password, phone }: Body  = req.body;
 
   try {
-    await User.create({ email, password, name }) 
+    await User.create({ email, password, phone }) 
 
     res.json({
       success: true,
