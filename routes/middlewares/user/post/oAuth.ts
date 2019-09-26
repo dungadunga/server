@@ -7,7 +7,7 @@ const FB_DEBUG_TOKEN_URL = 'https://graph.facebook.com/debug_token';
 
 export type OauthResponse = {
   platform: 'facebook' | 'google';
-  oauth_pk: number;
+  oauth_pk: string;
 }
 
 type FBTokenVerifyResponse = AxiosResponse<{
@@ -17,7 +17,7 @@ type FBTokenVerifyResponse = AxiosResponse<{
 type FBTokenDebugResponse = AxiosResponse<{
   data: {
     is_valid: boolean;
-    user_id: number;
+    user_id: string;
   }
 }>
 

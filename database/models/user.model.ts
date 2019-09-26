@@ -25,11 +25,13 @@ export default class User extends Model<User> {
     @Column(DataType.STRING)
     public phone: string;
 
+    @AllowNull(true)
     @Column(DataType.STRING)
     public platform: 'google' | 'facebook';
 
-    @Column(DataType.INTEGER)
-    public platform_pk: number;
+    @AllowNull(true)
+    @Column(DataType.STRING)
+    public oauth_pk: string;
     
     @Column(DataType.DATE)
     public createdAt: Date;
